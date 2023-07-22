@@ -64,7 +64,6 @@ module.exports = function (app) {
 
     .post(async (req, res) => {
       let board;
-      console.log(req.body)
       req.params.board 
         ? board = req.params.board
         : board = req.body.board
@@ -78,6 +77,7 @@ module.exports = function (app) {
         created_on: new Date(Date.now()),
         bumped_on: new Date(Date.now()),
       })
+
       res.redirect(`/b/${board}/`)
   })
 
